@@ -1,3 +1,5 @@
+const { setMaxListeners } = require("mocha/lib/runner");
+
 /**
  * Copy and paste defined amount of a string's symbols to the front and back of a string
  * @param {string} str
@@ -5,5 +7,6 @@
  * @returns {string}
  */
 module.exports.backToFront = function backToFront(str, symbolsCount) {
-  throw new Error('Not implemented');
+  const s = symbolsCount > 0 && symbolsCount < str.length ? str.slice(0, symbolsCount) : '';
+  return s + str + s;
 };
