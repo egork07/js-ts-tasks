@@ -9,14 +9,14 @@
  * @returns {number}
  */
 module.exports.maxCommonSub = function maxCommonSub(str1, str2) {
-  let maxSubstr = '';
+  let maxSubstr = ''
   for (let i = 0; i < str1.length; i++) {
     for (let j = i + 1; j <= str1.length; j++) {
-      let substring = str1.slice(i, j);
+      let substring = str1.slice(i, j)
       if (str2.includes(substring) && substring.length > maxSubstr.length) {
         maxSubstr = substring;
       }
     }
   }
-  return maxSubstr;
-};
+  return maxSubstr
+}

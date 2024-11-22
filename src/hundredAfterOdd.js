@@ -9,7 +9,7 @@ module.exports.hundredAfterOdd = function hundredAfterOdd(arr) {
   for (let i = 0; i < arr.length; i++) {
     newArray.push(arr[i]); 
     if (arr[i] % 2 !== 0) {
-      newArray.push(num);
+      newArray.push(num)
     }
   }
   return newArray

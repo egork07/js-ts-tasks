@@ -9,16 +9,16 @@
  */
 module.exports.replacement = function replacement(arr) {
   return arr.map(num => {
-    const digCount = Math.abs(num).toString().length;
+    const digCount = Math.abs(num).toString().length
     
     if (digCount === 1) {
-      return 1;
+      return 1
     } else if (digCount === 2) {
-      return 2;
+      return 2
     } else if (digCount === 3) {
-      return 3;
+      return 3
     } else {
-      return 4;
+      return 4
     }
-  });
-};
+  })
+}

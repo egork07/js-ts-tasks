@@ -6,7 +6,7 @@
 module.exports.getMaximalSequence = function getMaximalSequence(arr) {
    let sequence = []
    let firstSequence = [arr[0]]
-   if (arr.length === 0) return [];
+   if (arr.length === 0) return []
    for(let i = 1;i<arr.length;i++){
       if(arr[i]===arr[i-1]){
         firstSequence.push(arr[i])
@@ -15,7 +15,7 @@ module.exports.getMaximalSequence = function getMaximalSequence(arr) {
         if (firstSequence.length > sequence.length) {
            sequence = firstSequence;
         }
-        firstSequence = [arr[i]];
+        firstSequence = [arr[i]]
      }
    }
    if(sequence.length < firstSequence.length){

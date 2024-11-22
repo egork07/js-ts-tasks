@@ -8,5 +8,5 @@ module.exports.diffElems = function diffElems(arr) {
   for (let i = 0; i < arr.length; i++) {
     newArray.add(arr[i])
   }
-  return newArray.size;
+  return newArray.size
 };

@@ -6,7 +6,7 @@
  */
 module.exports.hasProperty = function hasProperty(object, prop) {
     if (typeof object !== "object" || object === null) {
-        return false;
+        return false
       }
     return prop in object
-};
+}
