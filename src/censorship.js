@@ -14,16 +14,11 @@
  * @returns {function}
  */
 module.exports.censorship = function censorship(forbidden) {
-  return function(str) {
-    let words = str.split(/(\s+)/);
-    for (let i = 0; i < words.length; i++) {
-      for (let j = 0; j < forbidden.length; j++) {
-        if (words[i].indexOf(forbidden[j]) !== -1) {
-          words[i] = '*'.repeat(forbidden[j].length);
-        }
-      }
-    }
-    return words.join('');
-  };
+  return function (str) {
+    forbidden.forEach((word) => {
+      const change = '*'.repeat(word.length);
+      str = str.split(word).join(change);
+    });
+    return str;
 };
-
+}
