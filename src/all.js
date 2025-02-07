@@ -3,6 +3,12 @@
  * @param {Array<Promise>} promisesArray
  * @returns Promise
  */
-module.exports.all = function all(promisesArray) {
-  throw new Error('Not implemented'); // remove me and write your code
+module.exports.all = async function all(promisesArray) {
+  let result = [];
+  
+  for (let i = 0; i < promisesArray.length; i++) {
+    result[i] = await promisesArray[i];
+  }
+  
+  return result;
 };
