@@ -6,5 +6,29 @@
  * @returns {boolean}
  */
 module.exports.converter = function (value: number, from: string, to: string): number {
-  throw new Error('Not implemented'); // delete this line and write your code
+  let convertedValue: number; 
+
+  const conversionRates: Record<string, (value: number) => number> = {
+    "C-K": function (value) { return value + 273.15; },
+    "K-C": function (value) { return value - 273.15; },
+    "m-mi": function (value) { return value / 1609.34; },
+    "mi-m": function (value) { return value * 1609.34; },
+    "gr-pound": function (value) { return value / 453.592; },
+    "pound-gr": function (value) { return value * 453.592; }
+  };
+
+  if (from === to) {
+    convertedValue = value;
+  } else {
+    const key = from + "-" + to;
+    const convertFn = conversionRates[key];
+
+    if (!convertFn) {
+      throw new Error("Conversion from " + from + " to " + to + " is not supported");
+    }
+
+    convertedValue = convertFn(value);
+  }
+
+  return parseFloat(convertedValue.toFixed(2));
 };
